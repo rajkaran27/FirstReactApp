@@ -1,0 +1,37 @@
+function AddTransaction({navigation}) {
+  return (
+    <View style={{ backgroundColor: "#2A9D8F", marginTop: 80 }}>
+      <View style={{ flexDirection: "row", margin: 13 }}>
+        <View style={{justifyContent: "center", textAlign: "center"}}>
+          <TouchableOpacity onPress={()=> navigation.navigate('Expenses')}>
+            <MaterialIcons name="arrow-back-ios" size={24} style={{ alignSelf: 'flex-start', color: "white" }}></MaterialIcons>
+          </TouchableOpacity>
+        </View>
+        <View style={{ width: "90%" }}>
+          <Text style={{ fontSize: 25, alignSelf: "center", fontWeight: "bold", color: "white" }}>Entertainment</Text>
+        </View>
+
+        
+      </View>
+
+      <View style={{ alignItems: 'center' }}>
+        <MaterialCommunityIcons name="movie-open-outline" style={{ fontSize: 60, color: "white",marginTop:45 }}></MaterialCommunityIcons>
+        <View style={{ flexDirection: "row",marginTop:50  }}>
+          <Text style={{ fontSize: 40, color: "white" }}>$</Text>
+          <TextInput
+            style={{ fontSize: 40, color: "white", alignSelf: "flex-end",}}
+            placeholder="0.00"
+            keyboardType="decimal-pad"
+          >
+          </TextInput>
+        </View>
+      </View>
+
+      <View style={{ flexDirection: "row", justifyContent: 'space-around', alignItems: 'center' }}>
+        <OptionButton styles={styles.shadow} iconName="note-edit-outline" optionName="Notes" />
+        <OptionButton styles={styles.shadow} iconName="calendar" optionName="Calendar" />
+        <OptionButton styles={styles.shadow} iconName="credit-card" optionName="Payment" />
+      </View>
+    </View>
+  )
+}
